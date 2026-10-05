@@ -8,10 +8,10 @@ namespace ListasSimplementeLigadas
     {
         public string Dato { get; set; }
         public Nodo? Siguiente { get; set; }
-        public Nodo(string dato)
+        public Nodo(string dato = "", Nodo? siguiente = null)
         {
             Dato = dato;
-            Siguiente = null;
+            Siguiente = siguiente;
         }
     }
 }

@@ -37,5 +37,19 @@ namespace ListasSimplementeLigadas
 
             return datos.ToString();
         }
+
+        public Nodo? Buscar(string dato)
+        {
+            Nodo nodoActual = _nodoInicial;
+            while (nodoActual.Siguiente != null)
+            {
+                nodoActual = nodoActual.Siguiente;
+                if (nodoActual.Dato == dato)
+                {
+                    return nodoActual;
+                }
+            }
+            return null;
+        }
     }
 }

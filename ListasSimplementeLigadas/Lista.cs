@@ -1,4 +1,6 @@
-﻿namespace ListasSimplementeLigadas
+﻿using System.Text;
+
+namespace ListasSimplementeLigadas
 {
     internal class Lista
     {
@@ -20,6 +22,20 @@
 
             Nodo nodoNuevo = new Nodo(dato);
             nodoActual.Siguiente = nodoNuevo;
+        }
+
+        public string ObtenerDatos()
+        {
+            Nodo nodoActual = _nodoInicial;
+            StringBuilder datos = new StringBuilder();
+
+            while (nodoActual.Siguiente != null)
+            {
+                nodoActual = nodoActual.Siguiente;
+                datos.AppendLine(nodoActual.Dato);
+            }
+
+            return datos.ToString();
         }
     }
 }
